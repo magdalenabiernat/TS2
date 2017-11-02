@@ -1,0 +1,78 @@
+% !TEX encoding = UTF-8 Unicode
+\documentclass{article}
+
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{subfig}
+\usepackage{graphicx}
+
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=3.5cm, bottom=3.5cm, headsep=1.2cm]{geometry}
+
+\linespread{1.3}
+\begin{document}
+	
+	\begin{titlepage}
+		\centering
+		{\scshape\LARGE Politechnika Wrocławska \par}
+		{\scshape\Large Katedra Systemów i Sieci Komputerowych \par}
+		
+		\vspace{1cm}
+		{\scshape\Large Technologie Sieciowe 2\par}
+		\vspace{5cm}
+		{\huge\bfseries Projekt przedmiotowy\par}
+		\vspace{5cm}
+		{\Large\itshape Magdalena Biernat, 225934\par}
+		{\Large\itshape Michał Duński, 226081\par}
+		\vfill
+		Opiekun\par
+		dr inż. Michał Kucharzak 
+		
+		\vfill
+		{\large \today\par}
+	\end{titlepage}
+	\newpage
+	\section{Wstęp}
+	 Zadaniem tego projektu jest zaprojektowanie sieci komputerowej dla firmy RoboNet - przedsiębiorstwa zajmującego się produkcją oprogramowania dla specjalistycznych urządzeń ‒ robotów. Firma zatrudnia ok. 180 osób podzielonych na 3 grupy robocze, które zajmują 2 budynki. Budynek A posiada 3 kondygnacje, Budynek B posiada 2 kondygnacje. Laboratorium znajduje się na parterze w budynku A. Sieć laboratoryjna nie ma dostępu do internetu. Do sieci laboratoryjnej mają dostęp wyłącznie Programiści i Testerzy. Serwery plików, www i pocztowy znajdują się w Budynku A i mieszczą się na dwóch kondygnacjach. Jeden serwer jest umieszczony w Budynku B.\newline
+	 \noindent
+	 \newline
+Planujemy zastosować odpowiednie programy antywirusowe dla bezpieczeństwa oprogramowania oraz aby ograniczyć dostęp do sieci.
+\newline
+\noindent
+\newline
+	Projektowana sieć powinna cechować się jakością, niezawodnością oraz skalowalnością w przypadku potrzeby zwiększenia ilości pracowników w firmie. Ważnym czynnikiem jest również estetyczna jakość wykonania instalacji.
+\newpage
+\section{Inwentaryzacja zasobów: sprzętu, aplikacji, zasobów ludzkich}
+Siedziba firmy mieści się w dwóch budynkach o oznaczeniach A i B. Budynek A jest trzypiętrowy, a budynek B ma tylko parter. 
+\subsection{Wykaz pomieszczeń w budynkach}
+\begin{enumerate}
+	\item Budynek A
+	\begin{itemize}
+		\item Parter: administratorzy, serwerownia 1
+		\item Piętro 1: programiści i testerzy, serwerownia pocztowa, serwerownia ww
+		\item Piętro 2: zarząd i kadry, programiści i testerzy
+	\end{itemize}
+	\item Budynek B
+		\begin{itemize}
+		\item Parter: zarząd i kadry, programiści i testerzy, serwerownia 2
+	\end{itemize}
+\end{enumerate}
+\subsection{Plany}
+\subsection{Sprzęt}
+Firma na wyposażeniu posiada:
+\begin{itemize}
+	\item 16 robotów
+	\item 7 drukarek
+	\item 24 kamery IP
+\end{itemize}
+\section{Analiza potrzeb użytkowników – wymagania zamawiającego}
+\section{Założenia projektowe}
+Projekt zakłada stworzenie sieci dla przedsiębiorstwa zajmującego się produkcją oprogramowania dla specjalistycznych urządzeń ‒ robotów, których zastosowanie jest ściśle tajne. Przedsiębiorstwo posiada dwa budynki. W jednym pracuje 100 użytkowników (komputerów), 5 drukarek, 16 kamer IP, 16 robotów i 3 serwery. W drugim pracuje 80 użytkowników (komputerów, 2 drukarki, 8 kamer IP i 1 serwer. W każdym budynku projekt zakłada sieć WiFi dla 150 gości. Budynek A ma trzy kondygnacje, budynek B posiada tylko parter. Przed stworzeniem sieci komputerowej zostanie wykonane (we wcześniejszym terminie i dla odpowiednich pomieszczeń) dostosowanie instalacji elektrycznej.
+W obu budynkach będą znajdować się przełączniki warstwy trzeciej.
+Dla połączenia z Internetem zostaną zamontowany router chroniony firewallem.
+Z sieci gości możliwy jest wyłącznie dostęp do Internetu.
+Wszyscy pracownicy mają dostęp do wszystkich drukarek i pozostałych serwerów. Z Internetu możliwy jest dostęp wyłącznie do Serwera WWW i Serwera Pocztowego.
+Okablowanie poziome w technologii 100BASE-TX, okablowanie pionowe
+Okablowanie poziome w technologii 100Base-TXFast, okablowanie pionowe w technologii 1000Base-T Gigabit Ethernet oraz połączenie światłowodowe między budynkami. Dla zachowania odpowiedniej estetyki kable zostaną schowane w podłodze lub podwieszanym suficie.
+Zastosowanie odpowiednich programów antywirusowych dla bezpieczeństwa oprogramowania oraz ograniczony dostęp do sieci.
+
+\end{document}}
