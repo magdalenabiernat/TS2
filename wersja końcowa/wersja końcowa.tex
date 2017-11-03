@@ -64,9 +64,10 @@ Firma na wyposażeniu posiada:
 	\item 7 drukarek
 	\item 24 kamery IP
 \end{itemize}
-\begin{tabular}{|r|r|r|r|r|}\hline
+\begin{tabular}{|c|c|c|c|c|}\hline
+	\centering
 	& Budynek A & Budynek A & Budynek A & 	Budynek B 	\\
-	\hline
+	\centering
  & parter & piętro I & pietro II & parter \\
  \hline
 drukarki & 1 & 2 & 2 & 2\\
@@ -76,7 +77,42 @@ roboty (urządzenia) & 16 & - & - & - \\
 kamery IP & 8 & 4 & 4 & 8 \\
 \hline
 \end{tabular}
+\newpage
 \section{Analiza potrzeb użytkowników – wymagania zamawiającego}
+\subsection{Dostęp do Internetu}
+W tabeli sumowane są wartości przepływów z i do Internetu dla każdego użytkownika. Wartości są w kb/s.
+\newline
+\begin{tabular}{|c|c|c|} \hline
+	& down & up \\
+	\hline
+	serwer www & 7 680 & 16 320\\
+	serwer pocztowy & 10 680 & 4 920\\
+	wideorozmowy & 7 040 & 7 040 \\
+	komunikator & 9 600 & 9 600 \\
+	praca w chmurze & 6 664 & 10 472 \\
+	przeglądarka & 24 920 & 5 020 \\
+	\hline
+	\hline
+	SUMA & 66 584 & 53 372\\
+\hline
+\end{tabular}
+\subsection{Sieć lokalna}
+W tabeli sumowane są wartości przepływów lokalnych dla każdego użytkownika. Wartości są w kb/s.
+\newline
+\begin{tabular}{|c|c|c|} \hline
+	& down & up \\
+	\hline
+	serwer pliów 1 & 34 400 & 69 600\\
+	serwer plików 2 & 123 600 & 98 000\\
+	serwer www & 35 400 & 5 940\\
+	serwer pocztowy & 67 000 & 77 520\\
+	drukarki & 1 800 & 30 900\\
+	\hline
+	\hline
+	SUMA & 262 200 & 281 960\\
+	\hline
+\end{tabular}
+\newpage
 \section{Założenia projektowe}
 Projekt zakłada stworzenie sieci dla przedsiębiorstwa zajmującego się produkcją oprogramowania dla specjalistycznych urządzeń ‒ robotów, których zastosowanie jest ściśle tajne. Przedsiębiorstwo posiada dwa budynki. W jednym pracuje 100 użytkowników (komputerów), 5 drukarek, 16 kamer IP, 16 robotów i 3 serwery. W drugim pracuje 80 użytkowników (komputerów, 2 drukarki, 8 kamer IP i 1 serwer. W każdym budynku projekt zakłada sieć WiFi dla 150 gości. Budynek A ma trzy kondygnacje, budynek B posiada tylko parter. Przed stworzeniem sieci komputerowej zostanie wykonane (we wcześniejszym terminie i dla odpowiednich pomieszczeń) dostosowanie instalacji elektrycznej.
 W obu budynkach będą znajdować się przełączniki warstwy trzeciej.
@@ -86,5 +122,4 @@ Wszyscy pracownicy mają dostęp do wszystkich drukarek i pozostałych serwerów
 Okablowanie poziome w technologii 100BASE-TX, okablowanie pionowe
 Okablowanie poziome w technologii 100Base-TXFast, okablowanie pionowe w technologii 1000Base-T Gigabit Ethernet oraz połączenie światłowodowe między budynkami. Dla zachowania odpowiedniej estetyki kable zostaną schowane w podłodze lub podwieszanym suficie.
 Zastosowanie odpowiednich programów antywirusowych dla bezpieczeństwa oprogramowania oraz ograniczony dostęp do sieci.
-
 \end{document}}
