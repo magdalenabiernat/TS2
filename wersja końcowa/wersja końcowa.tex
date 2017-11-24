@@ -32,7 +32,7 @@
 	\end{titlepage}
 	\newpage
 	\section{Wstęp}
-	 Zadaniem tego projektu jest zaprojektowanie sieci komputerowej dla firmy RoboNet - przedsiębiorstwa zajmującego się produkcją oprogramowania dla specjalistycznych urządzeń ‒ robotów. Firma zatrudnia ok. 180 osób podzielonych na 3 grupy robocze, które zajmują 2 budynki. Budynek A posiada 3 kondygnacje, Budynek B posiada 2 kondygnacje. Laboratorium znajduje się na parterze w budynku A. Sieć laboratoryjna nie ma dostępu do internetu. Do sieci laboratoryjnej mają dostęp wyłącznie Programiści i Testerzy. Serwery plików, www i pocztowy znajdują się w Budynku A i mieszczą się na dwóch kondygnacjach. Jeden serwer jest umieszczony w Budynku B.\newline
+	 Zadaniem tego projektu jest zaprojektowanie sieci komputerowej dla firmy RoboNet - przedsiębiorstwa zajmującego się produkcją oprogramowania dla specjalistycznych urządzeń ‒ robotów. Firma zatrudnia ok. 180 osób podzielonych na 3 grupy robocze, które zajmują 2 budynki. Budynek A posiada 3 kondygnacje, Budynek B posiada 1 kondygnację. Laboratorium znajduje się na parterze w budynku A. Sieć laboratoryjna nie ma dostępu do internetu. Do sieci laboratoryjnej mają dostęp wyłącznie Programiści i Testerzy. Serwery plików, www i pocztowy znajdują się w Budynku A i mieszczą się na dwóch kondygnacjach. Jeden serwer jest umieszczony w Budynku B.\newline
 	 \noindent
 	 \newline
 Planujemy zastosować odpowiednie programy antywirusowe dla bezpieczeństwa oprogramowania oraz aby ograniczyć dostęp do sieci.
@@ -47,13 +47,13 @@ Siedziba firmy mieści się w dwóch budynkach o oznaczeniach A i B. Budynek A j
 \begin{enumerate}
 	\item Budynek A
 	\begin{itemize}
-		\item Parter: administratorzy, serwerownia 1
-		\item Piętro 1: programiści i testerzy, serwerownia pocztowa, serwerownia www
-		\item Piętro 2: zarząd i kadry, programiści i testerzy
+		\item Parter: administratorzy, serwerownia 1, laboratorium, recepcja
+		\item Piętro 1: programiści i testerzy, serwerownia pocztowa, serwerownia www, toaleta
+		\item Piętro 2: zarząd i kadry, programiści i testerzy, toaleta
 	\end{itemize}
 	\item Budynek B
 		\begin{itemize}
-		\item Parter: zarząd i kadry, programiści i testerzy, serwerownia 2
+		\item Parter: zarząd i kadry, programiści i testerzy, serwerownia 2, dwie toalety, recepcja
 	\end{itemize}
 \end{enumerate}
 \subsection{Plany}
@@ -81,6 +81,7 @@ kamery IP & 8 & 4 & 4 & 8 \\
 \newpage
 \section{Analiza potrzeb użytkowników – wymagania zamawiającego}
 \subsection{Dostęp do Internetu}
+Na podstawie bieżących potrzeb firmy RoboNet(tabela niżej), przy uwzględnieniu ewentualnego rozrostu przedsiębiorstwa oraz obecnych na rynku ofert najlepszym rozwiązaniem w kwestii dostępu do Internetu jest łącze symetryczne 100Mb/100Mb.\newline
 W tabeli sumowane są wartości przepływów z i do Internetu dla każdego użytkownika. Wartości są w kb/s.
 \newline
 \begin{tabular}{|c|c|c|} \hline
@@ -98,7 +99,7 @@ W tabeli sumowane są wartości przepływów z i do Internetu dla każdego użyt
 \hline
 \end{tabular}
 \subsection{Sieć lokalna}
-W tabeli sumowane są wartości przepływów lokalnych dla każdego użytkownika. Wartości są w kb/s.
+W celu zapewnienia wystarczającej przepustowości w sieci lokalnej wykorzystane będzie okablowanie w technologii 100Base-TXFast Ethernet(okablowanie poziome) oraz 1000Base-T Gigabit Ethernet(okablowanie pionowe).  Wymagana przepustowość sieci lokalnej została podana w tabeli poniżej. Wartości zostały sumowane dla przepływów lokalnych dla każdego użytkownika. Wartości są w kb/s.
 \newline
 \begin{tabular}{|c|c|c|} \hline
 	& down & up \\
@@ -108,9 +109,10 @@ W tabeli sumowane są wartości przepływów lokalnych dla każdego użytkownika
 	serwer www & 35 400 & 5 940\\
 	serwer pocztowy & 67 000 & 77 520\\
 	drukarki & 1 800 & 30 900\\
+	roboty & 27 200 & 27 200\\
 	\hline
 	\hline
-	SUMA & 262 200 & 281 960\\
+	SUMA & 289 400 & 309 160\\
 	\hline
 \end{tabular}
 \newpage
@@ -120,7 +122,6 @@ W obu budynkach będą znajdować się przełączniki warstwy trzeciej.
 Dla połączenia z Internetem zostaną zamontowany router chroniony firewallem.
 Z sieci gości możliwy jest wyłącznie dostęp do Internetu.
 Wszyscy pracownicy mają dostęp do wszystkich drukarek i pozostałych serwerów. Z Internetu możliwy jest dostęp wyłącznie do Serwera WWW i Serwera Pocztowego.
-Okablowanie poziome w technologii 100BASE-TX, okablowanie pionowe
 Okablowanie poziome w technologii 100Base-TXFast, okablowanie pionowe w technologii 1000Base-T Gigabit Ethernet oraz połączenie światłowodowe między budynkami. Dla zachowania odpowiedniej estetyki kable zostaną schowane w podłodze lub podwieszanym suficie.
 Zastosowanie odpowiednich programów antywirusowych dla bezpieczeństwa oprogramowania oraz ograniczony dostęp do sieci.
 \end{document}}
