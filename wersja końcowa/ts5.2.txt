@@ -1,0 +1,56 @@
+Prze³¹cznik warstwy 3
+Link: https://www.cisco.com/c/en/us/products/collateral/switches/sge2000-24-port-gigabit-switch/data_sheet_c78-502447.html
+Cisco SGE2000
+
+24 porty RJ-45 10BASE-T/100BASE-TX/1000BASE-T
+Port konsolowy
+Port RPS do pod³¹czenia zapasowego Ÿród³a zasilania
+
+
+
+Prze³¹cznik warstwy 2 - 48 portów
+Link: https://www.cisco.com/c/en/us/products/collateral/switches/slm248p-48-port-10-100-2-port-gigabit-smart-switch-sfps-poe/data_sheet_c78-501235.html
+Cisco SLM248P
+
+48 portów RJ-45 10BASE-T/100BASE-TX/1000BASE-T
+2 porty SFP combo
+Wbudowany interfejs WWW
+
+
+
+Router
+Link: https://www.cisco.com/c/en/us/products/collateral/routers/rv325-dual-gigabit-wan-vpn-router/datasheet-c78-729726.html
+Cisco RV325-K9-G5
+
+2 porty RJ-45 WAN
+Obs³uga VPN
+
+
+
+Serwer(Wzi¹³em z przyk³adowego projektu, nie mog³em znaleŸæ odpowiedniego, trzeba bêdzie chyba zmieniæ)
+Link: https://www-01.ibm.com/common/ssi/cgi-bin/ssialias?infotype=dd&subtype=ca&&htmlfid=897/ENUS112-144
+
+
+
+Access Point
+Link: https://www.cisco.com/c/en/us/products/collateral/wireless/aironet-1850-series-access-points/datasheet-c78-734256.html
+Cisco Aironet 1850 Series
+
+Agregacja pakietów A-MPDU (Tx/Rx), A-MSDU (Tx/Rx)
+Kana³y 20 i 40 MHz
+Liczba nienak³adaj¹cych siê kana³ów:
+
+2.4GHz
+-802.11b/g - 3
+-802.11n - 3
+
+5GHz
+-802.11a 
+a)20 MHz - 25
+-802.11n
+a)20 MHz - 25
+b)40 MHz - 12
+-802.11ac
+a)20 MHz - 21
+b)40 MHz - 12
+c)80 MHz - 6
