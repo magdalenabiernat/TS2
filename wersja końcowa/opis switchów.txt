@@ -1,0 +1,6 @@
+8 - 12 - 16 - 24 - 48 
+parter sw 8
+1 pietro sw 48 + 12
+2 pietro sw 48
+
+parterB sw 2 * 48
