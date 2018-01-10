@@ -196,10 +196,40 @@ Dostęp do internetu jest przez router z firewallem. Przełącznik warstwy 3 ł�
 		\item 80 MHz - 6
 		\end{itemize}
 	\end{itemize}
-
-	
-	
-	
 \end{enumerate}
+\subsection{Projekt adresacji IP}
+Adresację IP przeprowadziliśmy w standardzie IPv4. Adresem routera podłączonego do Internetu, jest pierwszy dostępny adres prywatny klasy C, czyli 192.168.0.1, który zarazem jest bramą domyślną dla sieci VLAN.
+Szczegółowa adresacja znajduje się poniżej:
+
+\subsection{Projekt konfiguracji urządzeń}
+Poniżej przestawiony został projekt konfiguracji urządzeń.
+
+\subsection{Analiza bezpieczeństwa i niezawodności sieci}
+Niezbędnym elementem w projekcie sieci komputerowej dla danej firmy jest zapewnienie bezpieczeństwa w razie ewentualnych awarii, uszkodzeń lub innych zagrożeń. Opisane zostały tu konkretne zagrożenia oraz mechanizmy, które mają na celu zapewnienie bezpieczeństwa dla systemu informatycznego i sieci.
+
+\subsubsection{Bezpieczeństo fizyczne}
+Podstawowym zabezpieczeniem sieci od strony fizycznej jest wykorzystanie w projekcie standardowych mechanizmów
+ochronnych:
+\begin{itemize}
+	\item większość kabli prowadzona jest w specjalnych korytach PCV
+	\item urządzenia przechowywane są w przystosowanych do tego celu szafach
+\end{itemize}
+\subsubsection{Awaria systemów}
+Tutaj najawżniejsza jest ochrona danych.  Najgorszy scenariusz to utrata wszystkich danych. Dlatego codziennie po zakończonej pracy (w godzinach nocnych) będzie wykonywany backup danych na serwery zewnętrzne. Trzeba będzie róWnież regularnie serwisowac sprzęt.Ważnym elementem ochrony serwerów (oraz innych urządzeń) jest odpowiednie dostosowanie pomieszczenia, w którym dane urządzenia będą się znajdować. Obejmuje to między innymi zapewnienie optymalnych warunków dla sprzętu (m.in. poprzez chłodzenie) oraz zabezpieczenie dostępu przed osobami, które nie mają do tego uprawnień.
+
+\subsubsection{Wirusy}
+Takie firmy są bardzo narażone na zarażenie pojedynczych komputerów a w konsekwencji całej sieci. Abu tego uniknąć firma powinna korzystać z oprogramowania antywirusowego, które należy regularnie uaktualniać. Dla zwiększenia zapory została użyta róWnież zapora ogniowa w routerze bezpośrednio połączonym z Internetem.
+
+\subsubsection{Brak zasilania}
+Jest to poważny problem dużych firm i mocno on wpływa na dostęp do sieci. Najważniejsze w takiej sytuacji jest zapewnienie bezpieczeństwa dla danych. 
+Jednym z rozwiązań jest zastosowanie zasilaczy UPS, które pozwolą bezpiecznie wyłączyć serwery.  W ten sposób będzie można zabezpieczyć dane przechowywane przez serwery. Nieastety nie wszystkie komputery da się tak zabezpieczyć.
+
+\subsubsection{Włamania oraz ataki na sieć}
+Tutaj również najważniejsze są dane przechowywane na serwerach.
+Wykorzystana została zapora ogniowa. Jest to pierwszy etap ochrony.
+
+\subsubsection{WiFi}
+Należy zapewnić ochronę przed dostępem do sieci osób, które nie mają upoważnienienia.
+Najprostszym elementem ochrony sie WIfI jest ustawienie hasła dostępu. Dodatkowo róWnież transmisje będą szyfrowane poprzez WPA2.
 
 \end{document}
