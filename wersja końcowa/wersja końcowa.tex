@@ -129,7 +129,7 @@ Zastosowanie odpowiednich programów antywirusowych dla bezpieczeństwa oprogram
 \begin{figure}[!ht]	
 	\centering
 	\includegraphics[height=10cm]{projekt_logiczny2.png}
-	\caption{Schemat zamka szyfrowego}
+	\caption{Projekt logiczny sieci}
 	\label{fig:obrazek 1}
 \end{figure}
 Dostęp do internetu jest przez router z firewallem. Przełącznik warstwy 3 łączy przełączniki warstwy 2. Każde piętro ma przełącznik lub dwa (zależy od liczby potrzebnych wejść).
@@ -137,6 +137,12 @@ Dostęp do internetu jest przez router z firewallem. Przełącznik warstwy 3 ł�
 \subsection{Wybór urządzeń}
 \begin{enumerate}
 	\item Przełącznik warstwy 3\newline
+	\begin{figure}[!ht]	
+		\centering
+		\includegraphics[height=3cm]{1.jpg}
+		\caption{przełącznik warstwy 3}
+		\label{fig:obrazek 2}
+	\end{figure}
 	\href{https://www.cisco.com/c/en/us/products/collateral/switches/sge2000-24-port-gigabit-switch/data\_sheet\_c78-502447.html}{Cisco SGE2000}
 	\begin{itemize}
 		\item 24 porty RJ-45 10BASE-T/100BASE-TX/1000BASE-T
@@ -144,10 +150,13 @@ Dostęp do internetu jest przez router z firewallem. Przełącznik warstwy 3 ł�
 		\item Port RPS do podłączenia zapasowego źródła zasilania
 	\end{itemize}
 	
-	
-	
-	
-	\item Przełącznik warstwy 2 - 48 portów
+		\item Przełącznik warstwy 2 - 48 portów
+		\begin{figure}[!ht]	
+		\centering
+		\includegraphics[height=3cm]{2.jpg}
+		\caption{przełącznik warstwy 2}
+		\label{fig:obrazek 3}
+	\end{figure}
 	\href{https://www.cisco.com/c/en/us/products/collateral/switches/slm248p-48-port-10-100-2-port-gigabit-smart-switch-sfps-poe/data_sheet_c78-501235.html}{Cisco SLM248P}
 	\begin{itemize}
 		\item 48 portów RJ-45 10BASE-T/100BASE-TX/1000BASE-T
@@ -156,6 +165,12 @@ Dostęp do internetu jest przez router z firewallem. Przełącznik warstwy 3 ł�
 	\end{itemize}
 	\item Router
 	\href{ https://www.cisco.com/c/en/us/products/collateral/routers/rv325-dual-gigabit-wan-vpn-router/datasheet-c78-729726.html}{Cisco RV325-K9-G5}
+		\begin{figure}[!ht]	
+		\centering
+		\includegraphics[height=3cm]{3.jpg}
+		\caption{router}
+		\label{fig:obrazek 4}
+	\end{figure}
 	\begin{itemize}
 		\item 2 porty RJ-45 WAN
 		\item Obsługa VPN
@@ -163,11 +178,21 @@ Dostęp do internetu jest przez router z firewallem. Przełącznik warstwy 3 ł�
 	
 	\item Serwer
 \href{ https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-c-series-rack-servers/datasheet-c78-739281.html}{Cisco UCS C220 M5 Rack Server}
-	
+		\begin{figure}[!ht]	
+		\centering
+		\includegraphics[height=3cm]{4.jpg}
+		\caption{serwer}
+		\label{fig:obrazek 5}
+	\end{figure}
 	
 	\item Access Point
 	\href{ https://www.cisco.com/c/en/us/products/collateral/wireless/aironet-1850-series-access-points/datasheet-c78-734256.html}{Cisco Aironet 1850 Series}
-	
+		\begin{figure}[!ht]	
+		\centering
+		\includegraphics[height=3cm]{5.jpg}
+		\caption{przełącznik warstwy3}
+		\label{fig:obrazek 6}
+	\end{figure}
 	\begin{itemize}
 		\item Agregacja pakietów A-MPDU (Tx/Rx), A-MSDU (Tx/Rx)
 		\item Kanały 20 i 40 MHz
@@ -201,8 +226,82 @@ Dostęp do internetu jest przez router z firewallem. Przełącznik warstwy 3 ł�
 Adresację IP przeprowadziliśmy w standardzie IPv4. Adresem routera podłączonego do Internetu, jest pierwszy dostępny adres prywatny klasy C, czyli 192.168.0.1, który zarazem jest bramą domyślną dla sieci VLAN.
 Szczegółowa adresacja znajduje się poniżej:
 
+	\begin{tabular}[!ht]{c|c|c|c}
+	budynek &	piętro &	nazwa urządzenie & adres IP\\
+	\hline
+	A	& parter &	switch & 192.168.1.1\\
+	& &access point	& 192.168.1.2\\
+	& &2 drukarki	& 192.168.1.3-192.168.1.4\\
+	& & 8 kamer IP &	192.168.1.5-192.168.1.12\\
+	& & 4 PC	& 192.168.1.13-192.168.1.16\\
+	& & 16  robotów &	192.168.1.17-192.168.1.32\\ \hline
+	
+	A&I piętro	&2 switche	&192.168.3.1-192.168.3.2\\
+	&&2 serwery	&192.168.3.3-192.168.3.4\\
+	&&2 drukarki&	192.168.3.5-192.168.3.6\\
+	&&4 kamery	&192.168.3.7-192.168.3.10\\
+	&&49 PC	&192.168.3.11-192.168.3.59\\
+	\hline
+	
+	A &II piętro&	2 switche&	192.168.3.65-192.168.3.66\\
+	&&2 drukarki	&192.168.3.67-192.168.3.68\\
+	&&4 kamery	&192.168.3.69-192.168.3.72\\
+	&&37 PC	&192.168.3.73-192.168.3.109\\
+	\hline
+	A & &	WiFi	 &192.168.2.1-192.168.2.254\\
+	\hline
+\hline
+
+bud B &	parter&2 switche&	192.168.4.1-192.168.4.2\\
+&& access point	&192.168.4.3\\
+&&2 serwery	&192.168.4.4-192.168.4.5\\
+&&2 drukarki&	192.168.4.6-192.168.4.7\\
+&&8 kamer	&192.168.4.8-192.168.4.15\\
+&&70 PC	&192.168.4.16-192.168.4.85\\
+\hline
+&&WiFi &	192.168.5.1-192.168.5.254\\
+\hline
+
+\end{tabular}
 \subsection{Projekt konfiguracji urządzeń}
-Poniżej przestawiony został projekt konfiguracji urządzeń.
+Poniżej przedstawiony został projekt konfiguracji urządzeń.
+
+	\begin{tabular}[!ht]{c|c|c}
+	nazwa urządzenia & urządzenie docelowe &porty\\
+	\hline	
+S/A/0/1 &	drukarki&	F0/1-F0/2\\
+&kamery IP	&F0/3-F0/10\\
+&PC	&F0/11-F0/14\\
+&accsess point&	F0/15\\
+\hline
+
+S/A/1/1&	serwery&	F0/1-F0/2\\
+&drukarki&	F0/2-F0/3\\
+&kamery&	F0/4-F0/7\\
+&PC&	F0/8-F0/16\\
+\hline
+
+S/A/1/2	&PC&	F0/1-F0/40\\
+\hline
+
+S/A/2/1&	drukarki&	F0/1-F0/2\\
+&kamery&F0/3-F0/6\\
+\hline
+
+S/A/2/2&	PC	&F0/1-F0/37\\
+\hline
+
+S/B/0/1	&serwery	&F0/1-F0/2\\
+&drukarki&	F0/3-F0/4\\
+&kamery	&F0/5-F0/12\\
+&access point&	F0/13\\
+&PC	&F0/14-43\\
+\hline
+
+S/B/0/2	&PC	&F0/40\\
+\hline
+\end{tabular}
+\subsection{Projekt podłączenia do Internetu}
 
 \subsection{Analiza bezpieczeństwa i niezawodności sieci}
 Niezbędnym elementem w projekcie sieci komputerowej dla danej firmy jest zapewnienie bezpieczeństwa w razie ewentualnych awarii, uszkodzeń lub innych zagrożeń. Opisane zostały tu konkretne zagrożenia oraz mechanizmy, które mają na celu zapewnienie bezpieczeństwa dla systemu informatycznego i sieci.
@@ -232,4 +331,57 @@ Wykorzystana została zapora ogniowa. Jest to pierwszy etap ochrony.
 Należy zapewnić ochronę przed dostępem do sieci osób, które nie mają upoważnienienia.
 Najprostszym elementem ochrony sie WIfI jest ustawienie hasła dostępu. Dodatkowo róWnież transmisje będą szyfrowane poprzez WPA2.
 
+\section{Kosztorys}
+	\begin{tabular}[!ht]{c|c|c|c}
+	budynek &	piętro &	nazwa urządzenie & adres IP\\
+	\hline
+	A	& parter &	switch & 192.168.1.1\\
+	& &access point	& 192.168.1.2\\
+	& &2 drukarki	& 192.168.1.3-192.168.1.4\\
+	& & 8 kamer IP &	192.168.1.5-192.168.1.12\\
+	& & 4 PC	& 192.168.1.13-192.168.1.16\\
+	& & 16  robotów &	192.168.1.17-192.168.1.32\\ \hline
+	
+	A&I piętro	&2 switche	&192.168.3.1-192.168.3.2\\
+	&&2 serwery	&192.168.3.3-192.168.3.4\\
+	&&2 drukarki&	192.168.3.5-192.168.3.6\\
+	&&4 kamery	&192.168.3.7-192.168.3.10\\
+	&&49 PC	&192.168.3.11-192.168.3.59\\
+	\hline
+	
+	A &II piętro&	2 switche&	192.168.3.65-192.168.3.66\\
+	&&2 drukarki	&192.168.3.67-192.168.3.68\\
+	&&4 kamery	&192.168.3.69-192.168.3.72\\
+	&&37 PC	&192.168.3.73-192.168.3.109\\
+	\hline
+	A & &	WiFi	 &192.168.2.1-192.168.2.254\\
+	\hline
+	\hline
+	
+	bud B &	parter&2 switche&	192.168.4.1-192.168.4.2\\
+	&& access point	&192.168.4.3\\
+	&&2 serwery	&192.168.4.4-192.168.4.5\\
+	&&2 drukarki&	192.168.4.6-192.168.4.7\\
+	&&8 kamer	&192.168.4.8-192.168.4.15\\
+	&&70 PC	&192.168.4.16-192.168.4.85\\
+	\hline
+	&&WiFi &	192.168.5.1-192.168.5.254\\
+	\hline
+	
+\end{tabular}
+\subsection{Projekt konfiguracji urządzeń}
+Poniżej przedstawiony został projekt konfiguracji urządzeń.
+
+\begin{tabular}[!ht]{c|c|c}
+nazwa & szt &cena za sztukę\\
+\hline
+Cisco SGE2000       &  x1 & 2700 zł\\
+Cisco SLM248P       &   x6  & 1900 zł\\
+Cisco RV325-K9-G5   &   x1  & 1100 zł\\
+Cisco UCS C220 M5   &   x4  & 7000 zł\\
+Cisco Aironet 1852i &   x2  & 2100 zł\\
+\hline
+\hline
+łącznie&& 474 000 zł
+\end{tabular}
 \end{document}
