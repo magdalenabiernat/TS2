@@ -115,9 +115,9 @@ W celu zapewnienia wystarczającej przepustowości w sieci lokalnej wykorzystane
 \end{tabular}
 \newpage
 \section{Założenia projektowe}
-Projekt zakłada stworzenie sieci dla przedsiębiorstwa zajmującego się produkcją oprogramowania dla specjalistycznych urządzeń ‒ robotów, których zastosowanie jest ściśle tajne. Przedsiębiorstwo posiada dwa budynki. W jednym pracuje 100 użytkowników (komputerów), 5 drukarek, 16 kamer IP, 16 robotów i 3 serwery. W drugim pracuje 80 użytkowników (komputerów, 2 drukarki, 8 kamer IP i 1 serwer. W każdym budynku projekt zakłada sieć WiFi dla 150 gości. Budynek A ma trzy kondygnacje, budynek B posiada tylko parter. Przed stworzeniem sieci komputerowej zostanie wykonane (we wcześniejszym terminie i dla odpowiednich pomieszczeń) dostosowanie instalacji elektrycznej.
+Projekt zakłada stworzenie sieci dla przedsiębiorstwa zajmującego się produkcją oprogramowania dla specjalistycznych urządzeń ‒ robotów, których zastosowanie jest ściśle tajne. Przedsiębiorstwo posiada dwa budynki. W jednym pracuje 100 użytkowników (komputerów, 5 drukarek, 16 kamer IP, 16 robotów i 3 serwery). W drugim pracuje 80 użytkowników (komputerów, 2 drukarki, 8 kamer IP i 1 serwer. W każdym budynku projekt zakłada sieć WiFi dla 150 gości. Budynek A ma trzy kondygnacje, budynek B posiada tylko parter. Przed stworzeniem sieci komputerowej zostanie wykonane (we wcześniejszym terminie i dla odpowiednich pomieszczeń) dostosowanie instalacji elektrycznej.
 W obu budynkach będą znajdować się przełączniki warstwy trzeciej.
-Dla połączenia z Internetem zostaną zamontowany router chroniony firewallem.
+Dla połączenia z Internetem zostanie zamontowany router chroniony firewallem.
 Z sieci gości możliwy jest wyłącznie dostęp do Internetu.
 Wszyscy pracownicy mają dostęp do wszystkich drukarek i pozostałych serwerów. Z Internetu możliwy jest dostęp wyłącznie do Serwera WWW i Serwera Pocztowego.
 Okablowanie poziome w technologii 100Base-TXFast, okablowanie pionowe w technologii 1000Base-T Gigabit Ethernet oraz połączenie światłowodowe między budynkami. Dla zachowania odpowiedniej estetyki kable zostaną schowane w podłodze lub podwieszanym suficie.
@@ -302,6 +302,39 @@ S/B/0/2	&PC	&F0/40\\
 \hline
 \end{tabular}
 \subsection{Projekt podłączenia do Internetu}
+Ze względu na obecne zapotrzebowanie firmy jak i przewidywany wzrost jako główne łącze została wybrana usługa „FTTH Optymalny” dostarczana przez firmę REDE.  Poza dostępem do Internetu REDE oferuje również stały adres IP. Firma posiada również ofertę „FTTH Komfortowy” o wyższej przepustowości, co może okazać się przydatne przy dużym rozroście firmy w przyszłości.
+
+Koszty oferty:
+\begin{itemize}
+	\item Opłata aktywacyjna – 49zł
+\item	Konwerter FTTH -> RJ-45 – 150zł
+	\item	Stała opłata miesięczna – 59zł
+	\item Zewnętrzny adres IP – 15zł miesięcznie
+	Parametry łącza:
+	\item	Download – 100Mb/s
+	\item Upload – 100Mb/s
+	\item Czas trwania umowy – 36 miesięcy
+\end{itemize}
+
+
+Jako łącze zapasowe została wybrana oferta firmy Netia „Internet 100”.  Prędkość wysyłania w tej ofercie jest nieco niższa niż wymagana do w pełni bezproblemowego funkcjonowania sieci, ale wystarczająca dla podtrzymania działania najbardziej krytycznych transferów danych. 
+
+Koszty oferty:
+\begin{itemize}
+\item 	Opłata aktywacyjna - 29zł
+\item 	Utrzymanie łącza telefonicznego – 29.24zł miesięcznie
+\item 	Stała opłata miesięczna – 49.90zł
+\end{itemize}
+
+
+Parametry łącza:
+\begin{itemize}
+\item 	Download – 100Mb/s
+\item 	Upload – 50Mb/s
+\item 	Czas trwania umowy – 24 miesiące
+\end{itemize}
+
+
 
 \subsection{Analiza bezpieczeństwa i niezawodności sieci}
 Niezbędnym elementem w projekcie sieci komputerowej dla danej firmy jest zapewnienie bezpieczeństwa w razie ewentualnych awarii, uszkodzeń lub innych zagrożeń. Opisane zostały tu konkretne zagrożenia oraz mechanizmy, które mają na celu zapewnienie bezpieczeństwa dla systemu informatycznego i sieci.
@@ -314,14 +347,14 @@ ochronnych:
 	\item urządzenia przechowywane są w przystosowanych do tego celu szafach
 \end{itemize}
 \subsubsection{Awaria systemów}
-Tutaj najawżniejsza jest ochrona danych.  Najgorszy scenariusz to utrata wszystkich danych. Dlatego codziennie po zakończonej pracy (w godzinach nocnych) będzie wykonywany backup danych na serwery zewnętrzne. Trzeba będzie róWnież regularnie serwisowac sprzęt.Ważnym elementem ochrony serwerów (oraz innych urządzeń) jest odpowiednie dostosowanie pomieszczenia, w którym dane urządzenia będą się znajdować. Obejmuje to między innymi zapewnienie optymalnych warunków dla sprzętu (m.in. poprzez chłodzenie) oraz zabezpieczenie dostępu przed osobami, które nie mają do tego uprawnień.
+Tutaj najważniejsza jest ochrona danych.  Najgorszy scenariusz to utrata wszystkich danych. Dlatego codziennie po zakończonej pracy (w godzinach nocnych) będzie wykonywany backup danych na serwery zewnętrzne. Trzeba będzie również regularnie serwisować sprzęt. Ważnym elementem ochrony serwerów (oraz innych urządzeń) jest odpowiednie dostosowanie pomieszczenia, w którym dane urządzenia będą się znajdować. Obejmuje to między innymi zapewnienie optymalnych warunków dla sprzętu (m.in. poprzez chłodzenie) oraz zabezpieczenie dostępu przed osobami, które nie mają do tego uprawnień.
 
 \subsubsection{Wirusy}
-Takie firmy są bardzo narażone na zarażenie pojedynczych komputerów a w konsekwencji całej sieci. Abu tego uniknąć firma powinna korzystać z oprogramowania antywirusowego, które należy regularnie uaktualniać. Dla zwiększenia zapory została użyta róWnież zapora ogniowa w routerze bezpośrednio połączonym z Internetem.
+Takie firmy są bardzo narażone na zarażenie pojedynczych komputerów a w konsekwencji całej sieci. Abu tego uniknąć firma powinna korzystać z oprogramowania antywirusowego, które należy regularnie uaktualniać. Dla zwiększenia zapory została użyta również zapora ogniowa w routerze bezpośrednio połączonym z Internetem.
 
 \subsubsection{Brak zasilania}
 Jest to poważny problem dużych firm i mocno on wpływa na dostęp do sieci. Najważniejsze w takiej sytuacji jest zapewnienie bezpieczeństwa dla danych. 
-Jednym z rozwiązań jest zastosowanie zasilaczy UPS, które pozwolą bezpiecznie wyłączyć serwery.  W ten sposób będzie można zabezpieczyć dane przechowywane przez serwery. Nieastety nie wszystkie komputery da się tak zabezpieczyć.
+Jednym z rozwiązań jest zastosowanie zasilaczy UPS, które pozwolą bezpiecznie wyłączyć serwery.  W ten sposób będzie można zabezpieczyć dane przechowywane przez serwery. Niestety nie wszystkie komputery da się tak zabezpieczyć.
 
 \subsubsection{Włamania oraz ataki na sieć}
 Tutaj również najważniejsze są dane przechowywane na serwerach.
@@ -329,7 +362,7 @@ Wykorzystana została zapora ogniowa. Jest to pierwszy etap ochrony.
 
 \subsubsection{WiFi}
 Należy zapewnić ochronę przed dostępem do sieci osób, które nie mają upoważnienienia.
-Najprostszym elementem ochrony sie WIfI jest ustawienie hasła dostępu. Dodatkowo róWnież transmisje będą szyfrowane poprzez WPA2.
+Najprostszym elementem ochrony sie WiFi jest ustawienie hasła dostępu. Dodatkowo również transmisje będą szyfrowane poprzez WPA2.
 
 \section{Kosztorys}
 	\begin{tabular}[!ht]{c|c|c|c}
