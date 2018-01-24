@@ -6,12 +6,13 @@
 \usepackage{subfig}
 \usepackage{graphicx}
 \usepackage{hyperref}
-\usepackage{float}
+\usepackage{newfloat}
 \usepackage[a4paper, left=2.5cm, right=2.5cm, top=3.5cm, bottom=2.5cm, headsep=2.5cm]{geometry}
 
 \linespread{1.3}
+\DeclareFloatingEnvironment[fileext=lop]{Tabela}	
 \begin{document}
-	
+
 	\begin{titlepage}
 		\centering
 		{\scshape\LARGE Politechnika Wrocławska \par}
@@ -64,6 +65,8 @@ Firma na wyposażeniu posiada:
 	\item 7 drukarek
 	\item 24 kamery IP
 \end{itemize}
+\begin{Tabela}[!ht]
+	\centering
 \begin{tabular}{|c|c|c|c|c|}\hline
 	\centering
 	& Budynek A & Budynek A & Budynek A & 	Budynek B 	\\
@@ -77,12 +80,16 @@ roboty (urządzenia) & 16 & - & - & - \\
 kamery IP & 8 & 4 & 4 & 8 \\
 \hline
 \end{tabular}
+\caption{Rozkład urządzeń}
+\end{Tabela}
 \newpage
 \section{Analiza potrzeb użytkowników – wymagania zamawiającego}
 \subsection{Dostęp do Internetu}
 Na podstawie bieżących potrzeb firmy RoboNet(tabela niżej), przy uwzględnieniu ewentualnego rozrostu przedsiębiorstwa oraz obecnych na rynku ofert najlepszym rozwiązaniem w kwestii dostępu do Internetu jest łącze symetryczne 100Mb/100Mb.\newline
 W tabeli sumowane są wartości przepływów z i do Internetu dla każdego użytkownika. Wartości są w kb/s.
 \newline
+\begin{Tabela}[!ht]
+	\centering
 \begin{tabular}{|c|c|c|} \hline
 	& down & up \\
 	\hline
@@ -95,14 +102,18 @@ W tabeli sumowane są wartości przepływów z i do Internetu dla każdego użyt
 	\hline
 	\hline
 	SUMA & 66 584 & 53 372\\
-\hline
+	\hline
 \end{tabular}
+\caption{Wartość przepływów}
+\end{Tabela}
+
 \subsection{Sieć lokalna}
 W celu zapewnienia wystarczającej przepustowości w sieci lokalnej wykorzystane będzie okablowanie w technologii 100Base-TXFast Ethernet(okablowanie poziome) oraz 1000Base-T Gigabit Ethernet(okablowanie pionowe).  Wymagana przepustowość sieci lokalnej została podana w tabeli poniżej. Wartości zostały sumowane dla przepływów lokalnych dla każdego użytkownika. Wartości są w kb/s.
 
 POPRAWIĆ PRZEPŁYWY
 
-
+\begin{Tabela}[!ht]
+	\centering
 \begin{tabular}{|c|c|c|} \hline
 	& down & up \\
 	\hline
@@ -117,6 +128,8 @@ POPRAWIĆ PRZEPŁYWY
 	SUMA & 289 400 & 309 160\\
 	\hline
 \end{tabular}
+\caption{Przepływy}
+\end{Tabela}
 \newpage
 \section{Założenia projektowe}
 Projekt zakłada stworzenie sieci dla przedsiębiorstwa zajmującego się produkcją oprogramowania dla specjalistycznych urządzeń ‒ robotów, których zastosowanie jest ściśle tajne. Przedsiębiorstwo posiada dwa budynki. W jednym pracuje 100 użytkowników (komputerów, 5 drukarek, 16 kamer IP, 16 robotów i 3 serwery). W drugim pracuje 80 użytkowników (komputerów, 2 drukarki, 8 kamer IP i 1 serwer. W każdym budynku projekt zakłada sieć WiFi dla 150 gości. Budynek A ma trzy kondygnacje, budynek B posiada tylko parter. Przed stworzeniem sieci komputerowej zostanie wykonane (we wcześniejszym terminie i dla odpowiednich pomieszczeń) dostosowanie instalacji elektrycznej.
@@ -231,7 +244,8 @@ Dostęp do internetu jest przez router z firewallem. Przełącznik warstwy 3 ł�
 
 Adresację IP przeprowadziliśmy w standardzie IPv4. Adresem routera podłączonego do Internetu, jest pierwszy dostępny adres prywatny klasy C, czyli 192.168.0.1, który zarazem jest bramą domyślną dla sieci VLAN.
 Szczegółowa adresacja znajduje się poniżej:
-
+\begin{Tabela}[!ht]
+	\centering
 	\begin{tabular}[!ht]{c|c|c|c|c|c}
 	budynek &	piętro &	nazwa urządzenie & adres IP &maska&brama domyślna\\
 	\hline
@@ -256,66 +270,72 @@ Szczegółowa adresacja znajduje się poniżej:
 	\hline
 	A & &	WiFi	 &192.168.2.2-192.168.2.254&/25&192.168.2.1\\
 	\hline
-\hline
-
-bud B &	parter&2 switche&	192.168.4.2-192.168.4.3&/25&192.168.4.1\\
-&& access point	&192.168.4.4&&\\
-&&2 serwery	&192.168.4.5-192.168.4.6&&\\
-&&2 drukarki&	192.168.4.7-192.168.4.8&&\\
-&&8 kamer	&192.168.4.9-192.168.4.16&&\\
-&&70 PC	&192.168.4.17-192.168.4.86&&\\
-\hline
-&&WiFi &	192.168.5.2-192.168.5.254&/25&192.168.5.1\\
-\hline
-
+	\hline
+	
+	bud B &	parter&2 switche&	192.168.4.2-192.168.4.3&/25&192.168.4.1\\
+	&& access point	&192.168.4.4&&\\
+	&&2 serwery	&192.168.4.5-192.168.4.6&&\\
+	&&2 drukarki&	192.168.4.7-192.168.4.8&&\\
+	&&8 kamer	&192.168.4.9-192.168.4.16&&\\
+	&&70 PC	&192.168.4.17-192.168.4.86&&\\
+	\hline
+	&&WiFi &	192.168.5.2-192.168.5.254&/25&192.168.5.1\\
+	\hline
+	
 \end{tabular}
+\caption{Adresacja IP}
+\end{Tabela}
 \newpage
 \subsection{Projekt konfiguracji urządzeń}
 Poniżej przedstawiony został projekt konfiguracji urządzeń.
-
-	\begin{tabular}[!ht]{c|c|c}
-	nazwa urządzenia & urządzenie docelowe &porty\\
-	\hline	
-S/A/0/1 &	drukarki&	F0/1-F0/2\\
-&kamery IP	&F0/3-F0/10\\
-&PC	&F0/11-F0/14\\
-&accsess point&	F0/15\\
-\hline
-
-S/A/1/1&	serwery&	F0/1-F0/2\\
-&drukarki&	F0/2-F0/3\\
-&kamery&	F0/4-F0/7\\
-&PC&	F0/8-F0/16\\
-\hline
-
-S/A/1/2	&PC&	F0/1-F0/40\\
-\hline
-
-S/A/2/1&	drukarki&	F0/1-F0/2\\
-&kamery&F0/3-F0/6\\
-\hline
-
-S/A/2/2&	PC	&F0/1-F0/37\\
-\hline
-
-S/B/0/1	&serwery	&F0/1-F0/2\\
-&drukarki&	F0/3-F0/4\\
-&kamery	&F0/5-F0/12\\
-&access point&	F0/13\\
-&PC	&F0/14-43\\
-\hline
-
-S/B/0/2	&PC	&F0/40\\
-\hline
-R/A/0/1&S/A/0/1&F0\\
-&S/A/1/1&F1\\
-&S/A/1/2&F2\\
-&S/A/2/1&F3\\
-&S/A/2/2&F4\\
-&S/B/0/1&F5\\
-&S/B/0/2&F6\\
-\hline
-\end{tabular}
+\begin{Tabela}[!ht]
+	\centering
+	\begin{tabular}{c|c|c}
+		nazwa urządzenia & urządzenie docelowe &porty\\
+		\hline	
+		S/A/0/1 &	drukarki&	F0/1-F0/2\\
+		&kamery IP	&F0/3-F0/10\\
+		&PC	&F0/11-F0/14\\
+		&accsess point&	F0/15\\
+		\hline
+		
+		S/A/1/1&	serwery&	F0/1-F0/2\\
+		&drukarki&	F0/2-F0/3\\
+		&kamery&	F0/4-F0/7\\
+		&PC&	F0/8-F0/16\\
+		\hline
+		
+		S/A/1/2	&PC&	F0/1-F0/40\\
+		\hline
+		
+		S/A/2/1&	drukarki&	F0/1-F0/2\\
+		&kamery&F0/3-F0/6\\
+		\hline
+		
+		S/A/2/2&	PC	&F0/1-F0/37\\
+		\hline
+		
+		S/B/0/1	&serwery	&F0/1-F0/2\\
+		&drukarki&	F0/3-F0/4\\
+		&kamery	&F0/5-F0/12\\
+		&access point&	F0/13\\
+		&PC	&F0/14-43\\
+		\hline
+		
+		S/B/0/2	&PC	&F0/40\\
+		\hline
+		R/A/0/1&S/A/0/1&F0\\
+		&S/A/1/1&F1\\
+		&S/A/1/2&F2\\
+		&S/A/2/1&F3\\
+		&S/A/2/2&F4\\
+		&S/B/0/1&F5\\
+		&S/B/0/2&F6\\
+		\hline
+	\end{tabular}
+\caption{Konfiguracja urządzeń}
+\end{Tabela}
+	
 \subsection{Projekt podłączenia do Internetu}
 Ze względu na obecne zapotrzebowanie firmy jak i przewidywany wzrost jako główne łącze została wybrana usługa „FTTH Optymalny” dostarczana przez firmę REDE.  Poza dostępem do Internetu REDE oferuje również stały adres IP. Firma posiada również ofertę „FTTH Komfortowy” o wyższej przepustowości, co może okazać się przydatne przy dużym rozroście firmy w przyszłości.
 
@@ -380,16 +400,20 @@ Należy zapewnić ochronę przed dostępem do sieci osób, które nie mają upow
 Najprostszym elementem ochrony sie WiFi jest ustawienie hasła dostępu. Dodatkowo również transmisje będą szyfrowane poprzez WPA2.
 
 \section{Kosztorys}
-\begin{tabular}[!ht]{c|c|c}
-nazwa&szt&cena za sztukę\\
-\hline
-Cisco SGE2000&x1&2 700zł\\
-Cisco SLM248P&x6&1 900zł\\
-Cisco RV325-K9-G5& x1& 1 100 zł\\
-Cisco UCS C220 M5& x4& 7 000 zł\\
-Cisco Aironet 1852i& x2& 2 100 zł\\
-\hline
-\hline
-łącznie &&474 000 zł\\
+\begin{Tabela}[!ht]
+	\centering
+\begin{tabular}{c|c|c}
+	nazwa&szt&cena za sztukę\\
+	\hline
+	Cisco SGE2000&x1&2 700zł\\
+	Cisco SLM248P&x6&1 900zł\\
+	Cisco RV325-K9-G5& x1& 1 100 zł\\
+	Cisco UCS C220 M5& x4& 7 000 zł\\
+	Cisco Aironet 1852i& x2& 2 100 zł\\
+	\hline
+	\hline
+	łącznie &&474 000 zł\\
 \end{tabular}
+\caption{Kosztorys}
+\end{Tabela}
 \end{document}
