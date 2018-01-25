@@ -7,7 +7,7 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{newfloat}
-\usepackage[a4paper, left=1.5cm, right=1.5cm, top=3.0cm, bottom=2.0cm, headsep=2.5cm]{geometry}
+\usepackage[a4paper, left=1.0cm, right=1.0cm, top=3.0cm, bottom=2.0cm, headsep=2.5cm]{geometry}
 
 \linespread{1.3}
 \DeclareFloatingEnvironment[fileext=lop]{Tabela}	
@@ -115,7 +115,7 @@ W celu zapewnienia wystarczającej przepustowości w sieci lokalnej wykorzystane
 \begin{tabular}{|c|c|c|c|c|c|c|c} \hline
 	& Download lokalny, kb/s \\
 	\hline
-	Użytkownik/aplikacja & Plików 1 & 9Plików 2&WWW&Pocztowy&Drukarka&Liczba&SUMA\\
+	Użytkownik/aplikacja & Plików 1 & Plików 2&WWW&Pocztowy&Drukarka&Liczba&SUMA\\
 	\hline
 	1. Zarząd i kadry  & 0 & 600&230&330&10&28&32 760\\
 	2. Programiści i Testerzy & 0 & 700&190&380&10&148&189 440\\
@@ -133,7 +133,7 @@ W celu zapewnienia wystarczającej przepustowości w sieci lokalnej wykorzystane
 	\begin{tabular}{|c|c|c|c|c|c|c|c} \hline
 		& Download lokalny, kb/s \\
 		\hline
-		Użytkownik/aplikacja & Plików 1 & 9Plików 2&WWW&Pocztowy&Drukarka&Liczba&SUMA\\
+		Użytkownik/aplikacja & Plików 1 & Plików 2&WWW&Pocztowy&Drukarka&Liczba&SUMA\\
 		\hline
 		1. Zarząd i kadry  & 0 & 550 & 45 & 440 & 180 & 28 & 34 020\\
 		2. Programiści i Testerzy & 0 & 550 & 30 & 430 & 170 & 148 & 174 640\\
@@ -141,7 +141,7 @@ W celu zapewnienia wystarczającej przepustowości w sieci lokalnej wykorzystane
 		4. Kamery & 2 800 & 0 & 0 & 0 & 0 & 24 & 67 200\\
 		\hline
 		\hline
-		&&&&&&SUMA &262 200 \\
+		&&&&&&SUMA &281 960 \\
 		\hline
 	\end{tabular}
 	\caption{Upload lokalny}
@@ -154,7 +154,7 @@ W celu zapewnienia wystarczającej przepustowości w sieci lokalnej wykorzystane
 		\hline
 		Użytkownik/aplikacje & Przeglądarka& Chmura & Komunikator & Wideorozmowy & Liczba &SUMA\\
 		\hline
-		1. Zarząd i kadry  & 80 & 23 & 15 & 40 & 28 & 4 424\\
+		1. Zarząd i kadry  & 80 & 23 & 15 & 40 s& 28 & 4 424\\
 		2. Programiści i Testerzy & 110 & 30 & 15 & 40 & 148 & 28 860\\
 		3. Administratorzy & 100 & 20 & 20 & 0 & 4 & 560\\
 		4. Sieć gości & 20 & 5 & 5 & 0 & 300 & 9 000\\
@@ -191,6 +191,7 @@ W celu zapewnienia wystarczającej przepustowości w sieci lokalnej wykorzystane
 	\end{tabular}
 	\caption{Upload Internet}
 \end{Tabela}
+
 \newpage
 \section{Założenia projektowe}
 Projekt zakłada stworzenie sieci dla przedsiębiorstwa zajmującego się produkcją oprogramowania dla specjalistycznych urządzeń ‒ robotów, których zastosowanie jest ściśle tajne. Przedsiębiorstwo posiada dwa budynki. W jednym pracuje 100 użytkowników (komputerów, 5 drukarek, 16 kamer IP, 16 robotów i 3 serwery). W drugim pracuje 80 użytkowników (komputerów, 2 drukarki, 8 kamer IP i 1 serwer. W każdym budynku projekt zakłada sieć WiFi dla 150 gości. Budynek A ma trzy kondygnacje, budynek B posiada tylko parter. Przed stworzeniem sieci komputerowej zostanie wykonane (we wcześniejszym terminie i dla odpowiednich pomieszczeń) dostosowanie instalacji elektrycznej.
