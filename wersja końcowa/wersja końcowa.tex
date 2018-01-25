@@ -7,7 +7,7 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{newfloat}
-\usepackage[a4paper, left=2.5cm, right=2.5cm, top=3.5cm, bottom=2.5cm, headsep=2.5cm]{geometry}
+\usepackage[a4paper, left=1.5cm, right=1.5cm, top=3.0cm, bottom=2.0cm, headsep=2.5cm]{geometry}
 
 \linespread{1.3}
 \DeclareFloatingEnvironment[fileext=lop]{Tabela}	
@@ -110,25 +110,86 @@ W tabeli sumowane są wartości przepływów z i do Internetu dla każdego użyt
 \subsection{Sieć lokalna}
 W celu zapewnienia wystarczającej przepustowości w sieci lokalnej wykorzystane będzie okablowanie w technologii 100Base-TXFast Ethernet(okablowanie poziome) oraz 1000Base-T Gigabit Ethernet(okablowanie pionowe).  Wymagana przepustowość sieci lokalnej została podana w tabeli poniżej. Wartości zostały sumowane dla przepływów lokalnych dla każdego użytkownika. Wartości są w kb/s.
 
-POPRAWIĆ PRZEPŁYWY
+\begin{Tabela}[!ht]
+	\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c} \hline
+	& Download lokalny, kb/s \\
+	\hline
+	Użytkownik/aplikacja & Plików 1 & 9Plików 2&WWW&Pocztowy&Drukarka&Liczba&SUMA\\
+	\hline
+	1. Zarząd i kadry  & 0 & 600&230&330&10&28&32 760\\
+	2. Programiści i Testerzy & 0 & 700&190&380&10&148&189 440\\
+	3. Administratorzy & 8 000 & 800&210&380&10&4&37 600\\
+	4. Kamery & 100 & 0&0&0&0&24&2 400\\
+	\hline
+	\hline
+	&&&&&&SUMA &262 200 \\
+	\hline
+\end{tabular}
+\caption{Download lokalny}
+\end{Tabela}
+\begin{Tabela}[!ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|c} \hline
+		& Download lokalny, kb/s \\
+		\hline
+		Użytkownik/aplikacja & Plików 1 & 9Plików 2&WWW&Pocztowy&Drukarka&Liczba&SUMA\\
+		\hline
+		1. Zarząd i kadry  & 0 & 550 & 45 & 440 & 180 & 28 & 34 020\\
+		2. Programiści i Testerzy & 0 & 550 & 30 & 430 & 170 & 148 & 174 640\\
+		3. Administratorzy & 600 & 300 & 60 & 390 & 175 & 4 &6 100\\
+		4. Kamery & 2 800 & 0 & 0 & 0 & 0 & 24 & 67 200\\
+		\hline
+		\hline
+		&&&&&&SUMA &262 200 \\
+		\hline
+	\end{tabular}
+	\caption{Upload lokalny}
+\end{Tabela}
 
 \begin{Tabela}[!ht]
 	\centering
-\begin{tabular}{|c|c|c|} \hline
-	& down & up \\
-	\hline
-	serwer pliów 1 & 34 400 & 69 600\\
-	serwer plików 2 & 123 600 & 98 000\\
-	serwer www & 35 400 & 5 940\\
-	serwer pocztowy & 67 000 & 77 520\\
-	drukarki & 1 800 & 30 900\\
-	roboty & 27 200 & 27 200\\
-	\hline
-	\hline
-	SUMA & 289 400 & 309 160\\
-	\hline
-\end{tabular}
-\caption{Przepływy}
+	\begin{tabular}{|c|c|c|c|c|c|c} \hline
+		& Download lokalny, kb/s \\
+		\hline
+		Użytkownik/aplikacje & Przeglądarka& Chmura & Komunikator & Wideorozmowy & Liczba &SUMA\\
+		\hline
+		1. Zarząd i kadry  & 80 & 23 & 15 & 40 & 28 & 4 424\\
+		2. Programiści i Testerzy & 110 & 30 & 15 & 40 & 148 & 28 860\\
+		3. Administratorzy & 100 & 20 & 20 & 0 & 4 & 560\\
+		4. Sieć gości & 20 & 5 & 5 & 0 & 300 & 9 000\\
+		\hline
+		\hline
+		&&&&Download, kb/s && \\
+		\hline
+		&&& WWW & 80 & 96 & 7 680\\
+		&&& Pocztowy & 890 & 12 & 10 680\\
+		&&&&&&61 204\\
+		\hline
+	\end{tabular}
+	\caption{Download Internet}
+\end{Tabela}
+\begin{Tabela}[!ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c} \hline
+		& Download lokalny, kb/s \\
+		\hline
+		Użytkownik/aplikacje & Przeglądarka& Chmura & Komunikator & Wideorozmowy & Liczba &SUMA\\
+		\hline
+		1. Zarząd i kadry  & 15 & 36 & 15 & 40 & 28 & 2 968\\
+		2. Programiści i Testerzy & 10 & 53 & 15 & 40 & 148 & 17 464\\
+		3. Administratorzy & 20 & 30 & 30 & 0 & 4 & 320\\
+		4. Sieć gości & 20 & 5 & 5 & 0 & 300 & 9 000\\
+		\hline
+		\hline
+		&&&&Download, kb/s && \\
+		\hline
+		&&& WWW & 170 & 96 & 16 320\\
+		&&& Pocztowy &410 & 12 & 4 920\\
+		&&&&&&50 992\\
+		\hline
+	\end{tabular}
+	\caption{Upload Internet}
 \end{Tabela}
 \newpage
 \section{Założenia projektowe}
